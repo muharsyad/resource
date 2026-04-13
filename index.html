@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & Downloads - Muhacode</title>
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <div class="logo font-mono">
+                <a href="#">
+                    <span style="color: var(--brand-primary)">&lt;</span>Muha<span style="color: white">Code</span><span style="color: var(--brand-primary)">/&gt;</span>
+                </a>
+            </div>
+
+            <ul class="nav-links font-mono">
+                <li><a href="https://muhacode.com">Home</a></li>
+                <li><a href="../roadmap/">Roadmap</a></li>
+                <li><a href="../course/">Course</a></li>
+                <li><a href="../portfolio/">Portofolio</a></li>
+                <li><a href="../service/">Layanan</a></li>
+                <li><a href="../blog/">Blog</a></li>
+                <li><a href="../donate/">Donasi</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="desktop-only">
+                    <a href="../profile/" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.875rem;">Tentang Saya</a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu-panel font-mono" id="mobile-menu">
+            <a href="https://muhacode.com">Home</a>
+            <a href="../roadmap/" onclick="toggleMenu()">Roadmap</a>
+            <a href="../course/" onclick="toggleMenu()">Course</a>
+            <a href="../service/" onclick="toggleMenu()">Layanan</a>
+            <a href="../portfolio/" onclick="toggleMenu()">Portofolio</a>
+            <a href="../blog/" onclick="toggleMenu()">Blog</a>
+            <a href="../donate/" onclick="toggleMenu()">Donasi</a>
+            <a href="../profile/" onclick="toggleMenu()" style="color: var(--brand-primary); font-weight: bold;">Tentang Saya</a>
+        </div>
+    </nav>
+
+    <!-- HEADER SECTION -->
+    <header class="resources-header">
+        <i class="fas fa-folder-open header-icon-bg"></i>
+        <div class="container">
+            <div class="badge-free font-mono">100% Free Downloads</div>
+            <h1>Pusat <span style="color: var(--brand-primary)">Unduhan</span></h1>
+            <p>Koleksi e-book, bahan ajar, <i>cheat sheet</i>, dan latihan soal matematika & pemrograman yang bisa Anda unduh secara gratis.</p>
+        </div>
+    </header>
+
+    <!-- FILTER BAR -->
+    <section class="filter-section" id="filter-bar">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <button onclick="filterResources('all')" class="filter-btn active" id="btn-all">Semua</button>
+                    <button onclick="filterResources('ebook')" class="filter-btn" id="btn-ebook">E-Book</button>
+                    <button onclick="filterResources('materi')" class="filter-btn" id="btn-materi">Bahan Ajar</button>
+                    <button onclick="filterResources('soal')" class="filter-btn" id="btn-soal">Latihan Soal</button>
+                    <button onclick="filterResources('cheat')" class="filter-btn" id="btn-cheat">Cheat Sheet</button>
+                </div>
+
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" onkeyup="searchResources()" placeholder="Cari file...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN LIST CONTENT -->
+    <main>
+        <div class="container">
+            
+            <div id="resourcesGrid" class="resources-list">
+
+                <!-- Resource 1: E-Book -->
+                <div class="resource-item" data-category="ebook">
+                    <div class="res-icon red">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Kalkulus Dasar untuk Machine Learning</h3>
+                        <div class="res-meta">
+                            <span class="res-tag badge-red">E-Book</span>
+                            <span class="res-size">2.4 MB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="#" class="btn-download" title="Unduh">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resource 2: Latihan Soal -->
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon red">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Bank Soal OSN Matematika SMA (2018-2023)</h3>
+                        <div class="res-meta">
+                            <span class="res-tag badge-red" style="border-color:rgba(251,191,36,0.2); background:rgba(251,191,36,0.05); color:var(--brand-secondary);">Latihan Soal</span>
+                            <span class="res-size">1.8 MB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="#" class="btn-download" title="Unduh">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resource 3: Materi -->
+                <div class="resource-item" data-category="materi">
+                    <div class="res-icon blue">
+                        <i class="fas fa-file-archive"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Slide & Dataset: Python Fundamental</h3>
+                        <div class="res-meta">
+                            <span class="res-tag badge-blue">Bahan Ajar</span>
+                            <span class="res-size">15.5 MB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="#" class="btn-download" title="Unduh">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resource 4: Cheat Sheet -->
+                <div class="resource-item" data-category="cheat">
+                    <div class="res-icon green">
+                        <i class="fas fa-file-image"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Pandas Data Wrangling Cheat Sheet</h3>
+                        <div class="res-meta">
+                            <span class="res-tag badge-green">Cheat Sheet</span>
+                            <span class="res-size">800 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="#" class="btn-download" title="Unduh">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resource 5: Latihan Soal (Code) -->
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon purple">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Jupyter Notebook: Prediksi Harga Rumah</h3>
+                        <div class="res-meta">
+                            <span class="res-tag badge-purple">Latihan Soal</span>
+                            <span class="res-size">4.2 MB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="#" class="btn-download" title="Unduh">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resource 6: E-Book -->
+                <div class="resource-item" data-category="ebook">
+                    <div class="res-icon red">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Pengantar Struktur Data dengan Python</h3>
+                        <div class="res-meta">
+                            <span class="res-tag badge-red" style="border-color:rgba(45,212,191,0.2); background:rgba(45,212,191,0.05); color:var(--brand-primary);">E-Book</span>
+                            <span class="res-size">5.1 MB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="#" class="btn-download" title="Unduh">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div id="noResults" class="empty-state hidden">
+                    <div class="empty-icon"><i class="fas fa-search-minus"></i></div>
+                    <h3>File tidak ditemukan</h3>
+                    <p>Coba gunakan kata kunci lain atau pilih kategori yang berbeda.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo font-mono">
+                        &lt;MuhaCode/&gt;
+                    </a>
+                    <p class="footer-text">Membangun pemahaman teknologi melalui fondasi matematika yang kuat. Belajar coding bukan sekadar menghafal sintaks, tapi memahami logika.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Navigasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="../course/">Course</a></li>
+                        <li><a href="../roadmap/">Roadmap</a></li>
+                        <li><a href="../service/">Layanan</a></li>
+                        <li><a href="../portfolio/">Portofolio</a></li>
+                        <li><a href="../blog/">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div style="display: none;">
+                    <h4 class="footer-title">Donasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-heart" style="color: #f56565; margin-right: 5px;"></i> Saweria</a></li>
+                        <li><a href="#"><i class="fas fa-hamburger" style="color: #fbbf24; margin-right: 5px;"></i> Trakteer</a></li>
+                        <li><a href="#"><i class="fab fa-paypal" style="color: #60a5fa; margin-right: 5px;"></i> PayPal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Social</h4>
+                    <div class="social-row">
+                        <a href="https://github.com/muharsyad" style="--icon-color: #fff" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/muharsyad/" style="--icon-color: #3b82f6" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@muhacode" style="--icon-color: #f56565" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/muhacode" style="--icon-color: #E91E63" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://arsyadmuh.medium.com/" style="--icon-color: #fff" target="_blank"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Muhacode. All rights reserved.</p>
+                <p class="font-mono" style="color: #374151;">Code is just applied Math & Logic.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIC FILTERING & SEARCH -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found - Muhacode</title>
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles/404.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <div class="logo font-mono">
+                <a href="https://muhacode.com">
+                    <span style="color: var(--brand-primary)">&lt;</span>Muha<span style="color: white">Code</span><span style="color: var(--brand-primary)">/&gt;</span>
+                </a>
+            </div>
+
+            <ul class="nav-links font-mono">
+                <li><a href="../roadmap/">Roadmap</a></li>
+                <li><a href="../courses/">Course</a></li>
+                <li><a href="../portfolio/">Portofolio</a></li>
+                <li><a href="../services/">Layanan</a></li>
+                <li><a href="../blog/">Blog</a></li>
+                <li><a href="../resource/">Resource</a></li>
+                <li style="display: none;"><a href="#donate">Donasi</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="desktop-only">
+                    <a href="../profile/" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.875rem;">Tentang Saya</a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu-panel font-mono" id="mobile-menu">
+            <a href="../roadmap" onclick="toggleMenu()">Roadmap</a>
+            <a href="../courses" onclick="toggleMenu()">Course</a>
+            <a href="../services" onclick="toggleMenu()">Layanan</a>
+            <a href="../portfolio" onclick="toggleMenu()">Portofolio</a>
+            <a href="../resource" onclick="toggleMenu()">Resource</a>
+            <a href="../donate" onclick="toggleMenu()" style="display: none;">Donasi</a>
+            <a href="../profile/" onclick="toggleMenu()" style="color: var(--brand-primary); font-weight: bold;">Tentang Saya</a>
+        </div>
+    </nav>
+
+    <!-- MAIN 404 CONTENT -->
+    <main class="error-main">
+        <!-- Latar Belakang Dekoratif -->
+        <div class="bg-elements">
+            <div class="bg-text bg-text-1">404</div>
+            <div class="bg-text bg-text-2">NaN</div>
+            <div class="bg-text bg-text-3">null</div>
+            <div class="bg-text bg-text-4">undefined</div>
+        </div>
+
+        <!-- Konten Utama -->
+        <div class="error-content">
+            <div class="error-badge font-mono">Exception Raised</div>
+            <h1 class="error-code font-mono">404</h1>
+            <h2 class="error-title">Halaman Tidak Ditemukan</h2>
+            <p class="error-desc">Sepertinya Anda mengakses rute yang tidak terdefinisi dalam sistem kami, atau variabel halamannya bernilai <i>null</i>.</p>
+            
+            <div class="btn-group">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Kembali ke Beranda
+                </a>
+                <a href="courses.html" class="btn btn-outline">
+                    <i class="fas fa-book"></i> Lihat Course
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- MINIMALIST FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo font-mono">
+                        &lt;MuhaCode/&gt;
+                    </a>
+                    <p class="footer-text">Membangun pemahaman teknologi melalui fondasi matematika yang kuat. Belajar coding bukan sekadar menghafal sintaks, tapi memahami logika.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Navigasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="../course/">Course</a></li>
+                        <li><a href="../roadmap/">Roadmap</a></li>
+                        <li><a href="../service/">Layanan</a></li>
+                        <li><a href="../portfolio/">Portofolio</a></li>
+                        <li><a href="../blog/">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div style="display: none;">
+                    <h4 class="footer-title">Donasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-heart" style="color: #f56565; margin-right: 5px;"></i> Saweria</a></li>
+                        <li><a href="#"><i class="fas fa-hamburger" style="color: #fbbf24; margin-right: 5px;"></i> Trakteer</a></li>
+                        <li><a href="#"><i class="fab fa-paypal" style="color: #60a5fa; margin-right: 5px;"></i> PayPal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Social</h4>
+                    <div class="social-row">
+                        <a href="https://github.com/muharsyad" style="--icon-color: #fff" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/muharsyad/" style="--icon-color: #3b82f6" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@muhacode" style="--icon-color: #f56565" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/muhacode" style="--icon-color: #E91E63" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://arsyadmuh.medium.com/" style="--icon-color: #fff" target="_blank"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Muhacode. All rights reserved.</p>
+                <p class="font-mono" style="color: #374151;">Code is just applied Math & Logic.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
