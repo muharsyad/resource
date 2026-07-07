@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 Not Found - Muhacode</title>
-    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
         <div class="container nav-content">
             <div class="logo font-mono">
                 <a href="https://muhacode.com">
-                    <span style="color: var(--brand-primary)">&lt;</span>Muha<span style="color: white">Code</span><span style="color: var(--brand-primary)">/&gt;</span>
+                    <img src="assets/nav-logo.png" alt="MuhaCode Logo" class="logo-img">
                 </a>
             </div>
 
@@ -52,7 +52,7 @@
             <a href="../portfolio" onclick="toggleMenu()">Portofolio</a>
             <a href="../resource" onclick="toggleMenu()">Resource</a>
             <a href="../donate" onclick="toggleMenu()" style="display: none;">Donasi</a>
-            <a href="../profile/" onclick="toggleMenu()" style="color: var(--brand-primary); font-weight: bold;">Tentang Saya</a>
+            <a href="../profile/" onclick="toggleMenu()" style="color: var(--light-accent-primary); font-weight: bold;">Tentang Saya</a>
         </div>
     </nav>
 
@@ -89,12 +89,13 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <a href="#" class="footer-logo font-mono">
-                        &lt;MuhaCode/&gt;
+                    <a href="#" class="footer-logo">
+                        <img src="assets/nav-logo.png" alt="MuhaCode Logo">
                     </a>
-                    <p class="footer-text">Membangun pemahaman teknologi melalui fondasi matematika yang kuat. Belajar coding bukan sekadar menghafal sintaks, tapi memahami logika.</p>
+                    <p class="footer-text">Membangun pemahaman teknologi melalui fondasi matematika yang kuat. Belajar
+                        coding bukan sekadar menghafal sintaks, tapi memahami logika.</p>
                 </div>
-                
+
                 <div>
                     <h4 class="footer-title">Navigasi</h4>
                     <ul class="footer-links">
@@ -109,27 +110,35 @@
                 <div style="display: none;">
                     <h4 class="footer-title">Donasi</h4>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-heart" style="color: #f56565; margin-right: 5px;"></i> Saweria</a></li>
-                        <li><a href="#"><i class="fas fa-hamburger" style="color: #fbbf24; margin-right: 5px;"></i> Trakteer</a></li>
-                        <li><a href="#"><i class="fab fa-paypal" style="color: #60a5fa; margin-right: 5px;"></i> PayPal</a></li>
+                        <li><a href="#"><i class="fas fa-heart" style="color: #f56565; margin-right: 5px;"></i>
+                                Saweria</a></li>
+                        <li><a href="#"><i class="fas fa-hamburger" style="color: #fbbf24; margin-right: 5px;"></i>
+                                Trakteer</a></li>
+                        <li><a href="#"><i class="fab fa-paypal" style="color: #60a5fa; margin-right: 5px;"></i>
+                                PayPal</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="footer-title">Social</h4>
                     <div class="social-row">
-                        <a href="https://github.com/muharsyad" style="--icon-color: #fff" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/muharsyad/" style="--icon-color: #3b82f6" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.youtube.com/@muhacode" style="--icon-color: #f56565" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/muhacode" style="--icon-color: #E91E63" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://arsyadmuh.medium.com/" style="--icon-color: #fff" target="_blank"><i class="fab fa-medium"></i></a>
+                        <a href="https://github.com/muharsyad" style="--icon-color: var(--light-text-primary)" target="_blank"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/muharsyad/" style="--icon-color: #3b82f6"
+                            target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@muhacode" style="--icon-color: #f56565" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/muhacode" style="--icon-color: #E91E63" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://arsyadmuh.medium.com/" style="--icon-color: var(--light-text-primary)" target="_blank"><i
+                                class="fab fa-medium"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>© 2026 Muhacode. All rights reserved.</p>
-                <p class="font-mono" style="color: #374151;">Code is just applied Math & Logic.</p>
+                <p class="font-mono">Code is just applied Math & Logic.</p>
             </div>
         </div>
     </footer>
