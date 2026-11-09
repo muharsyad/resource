@@ -2,23 +2,34 @@ function toggleMenu() {
     document.getElementById("mobile-menu").classList.toggle("active");
 }
 
+function getTargetElements() {
+    // Otomatis mendeteksi apakah halaman berisi Card (Halaman Utama) atau List Item (Halaman Detail)
+    const cards = document.querySelectorAll(".resource-card");
+    if (cards.length > 0) return cards;
+    return document.querySelectorAll(".resource-item");
+}
+
 function filterResources(category) {
-    // Update active buttons
+    // Update tombol aktif
     const buttons = document.querySelectorAll(".filter-btn");
     buttons.forEach((btn) => btn.classList.remove("active"));
-    document.getElementById(`btn-${category}`).classList.add("active");
+    const activeBtn = document.getElementById(`btn-${category}`);
+    if (activeBtn) activeBtn.classList.add("active");
 
-    // Logic hide/show items
-    const resources = document.querySelectorAll(".resource-item");
+    // Reset input pencarian saat ganti tab kategori
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) searchInput.value = "";
+
+    const items = getTargetElements();
     let hasVisible = false;
 
-    resources.forEach((res) => {
-        const resCategory = res.getAttribute("data-category");
-        if (category === "all" || resCategory === category) {
-            res.classList.remove("hidden");
+    items.forEach((item) => {
+        const itemCategory = item.getAttribute("data-category");
+        if (category === "all" || itemCategory === category) {
+            item.classList.remove("hidden");
             hasVisible = true;
         } else {
-            res.classList.add("hidden");
+            item.classList.add("hidden");
         }
     });
 
@@ -26,26 +37,24 @@ function filterResources(category) {
 }
 
 function searchResources() {
-    const input = document.getElementById("searchInput").value.toLowerCase();
-    const resources = document.querySelectorAll(".resource-item");
+    const input = document.getElementById("searchInput").value.toLowerCase().trim();
+    const items = getTargetElements();
     let hasVisible = false;
 
-    if (input.length > 0) {
-        document
-            .querySelectorAll(".filter-btn")
-            .forEach((btn) => btn.classList.remove("active"));
-        document.getElementById("btn-all").classList.add("active");
+    // Jika sedang mengetik dan ada tombol filter, aktifkan tab "Semua"
+    const allBtn = document.getElementById("btn-all");
+    if (input.length > 0 && allBtn) {
+        document.querySelectorAll(".filter-btn").forEach((btn) => btn.classList.remove("active"));
+        allBtn.classList.add("active");
     }
 
-    resources.forEach((res) => {
-        // Ambil semua teks (Judul, Tag, Size)
-        const textContent = res.innerText.toLowerCase();
-
+    items.forEach((item) => {
+        const textContent = item.innerText.toLowerCase();
         if (textContent.includes(input)) {
-            res.classList.remove("hidden");
+            item.classList.remove("hidden");
             hasVisible = true;
         } else {
-            res.classList.add("hidden");
+            item.classList.add("hidden");
         }
     });
 
@@ -54,6 +63,7 @@ function searchResources() {
 
 function toggleEmptyState(visible) {
     const noResults = document.getElementById("noResults");
+    if (!noResults) return;
     if (visible) {
         noResults.classList.add("hidden");
     } else {

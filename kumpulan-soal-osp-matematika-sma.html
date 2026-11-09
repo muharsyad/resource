@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal OSN Matematika SMA (Tingkat Provinsi) - Muhacode</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/resouce-detail.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <div class="logo font-mono">
+                <a href="https://muhacode.com">
+                    <img src="assets/nav-logo.png" alt="MuhaCode Logo" class="logo-img">
+                </a>
+            </div>
+
+            <ul class="nav-links font-mono">
+                <li><a href="https://muhacode.com">Home</a></li>
+                <li><a href="../roadmap/">Roadmap</a></li>
+                <li><a href="../course/">Course</a></li>
+                <li><a href="../portfolio/">Portofolio</a></li>
+                <li><a href="../service/">Layanan</a></li>
+                <li><a href="../blog/">Blog</a></li>
+                <li style="display: none;"><a href="../donate/">Donasi</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="desktop-only">
+                    <a href="../profile/" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.875rem;">Tentang Saya</a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu-panel font-mono" id="mobile-menu">
+            <a href="https://muhacode.com">Home</a>
+            <a href="../roadmap/" onclick="toggleMenu()">Roadmap</a>
+            <a href="../course/" onclick="toggleMenu()">Course</a>
+            <a href="../service/" onclick="toggleMenu()">Layanan</a>
+            <a href="../portfolio/" onclick="toggleMenu()">Portofolio</a>
+            <a href="../blog/" onclick="toggleMenu()">Blog</a>
+            <a href="../donate/" onclick="toggleMenu()" style="display: none;">Donasi</a>
+            <a href="../profile/" onclick="toggleMenu()" style="color: var(--light-accent-primary); font-weight: bold;">Tentang Saya</a>
+        </div>
+    </nav>
+
+    <!-- HEADER SECTION -->
+    <header class="resources-header">
+        <i class="fas fa-trophy header-icon-bg"></i>
+        <div class="container">
+            <a href="index.html" class="back-link font-mono">
+                <i class="fas fa-arrow-left"></i> Kembali ke Pusat Unduhan
+            </a>
+            <div>
+                <span class="badge-free font-mono">Latihan Soal &bull; Tingkat Provinsi</span>
+            </div>
+            <h1>Soal OSP <span style="color: var(--light-accent-primary)">Matematika SMA</span></h1>
+            <p>Arsip lengkap naskah soal Olimpiade Sains Nasional (OSN) bidang Matematika SMA tingkat Provinsi dari tahun 2002 hingga 2023.</p>
+        </div>
+    </header>
+
+    <!-- TOOLBAR: INFO JUMLAH, SORTIR & PENCARIAN -->
+    <section class="filter-section" id="filter-bar">
+        <div class="container">
+            <div class="filter-container">
+                <div class="collection-toolbar">
+                    <span class="doc-counter font-mono" id="docCounter">Menampilkan 22 dokumen</span>
+                    <button class="btn-sort font-mono" onclick="reverseResourceList()" id="sortBtn" title="Ubah urutan tahun">
+                        <i class="fas fa-sort-amount-down" id="sortIcon"></i>
+                        <span id="sortText">Terbaru</span>
+                    </button>
+                </div>
+
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" oninput="searchResources()" placeholder="Cari tahun soal (misal: 2023)...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN LIST CONTENT -->
+    <main>
+        <div class="container">
+            
+            <div id="resourcesGrid" class="resources-list">
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2025</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">113 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2025.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2024</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">133 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2024.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2023</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">239 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2023.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2022</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">125 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2022.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2021</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">188 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2021.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2020</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">218 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2020.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2019</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">138 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2019.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2018</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">234 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2018.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2017</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">135 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2017.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2016</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">116 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2016.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2015</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">232 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2015.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2014</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">168 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2014.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2012</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">151 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2012.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2011</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">248 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2011.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2010</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">180 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2010.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2009</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">143 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2009.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2008</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">126 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2008.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2007</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">109 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2007.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2006</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">138 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2006.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2005</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">140 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2005.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2004</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">171 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2004.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2003</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">158 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2003.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item" data-category="soal">
+                    <div class="res-icon tag-sage-green">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="res-content">
+                        <h3 class="res-title">Soal OSP Matematika SMA 2002</h3>
+                        <div class="res-meta">
+                            <span class="res-tag tag-sage-green">Latihan Soal</span>
+                            <span class="res-size">168 KB</span>
+                        </div>
+                    </div>
+                    <div class="res-action">
+                        <a href="assets/doc/osp-matematika-sma-2002.pdf" class="btn-download" title="Unduh" target="_blank">
+                            <i class="fas fa-download"></i> <span class="btn-text">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty State -->
+            <div id="noResults" class="empty-state hidden">
+                <div class="empty-icon"><i class="fas fa-search-minus"></i></div>
+                <h3>File tidak ditemukan</h3>
+                <p>Tidak ada naskah soal yang cocok dengan tahun atau kata kunci tersebut.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo">
+                        <img src="assets/nav-logo.png" alt="MuhaCode Logo">
+                    </a>
+                    <p class="footer-text">Membangun pemahaman teknologi melalui fondasi matematika yang kuat. Belajar coding bukan sekadar menghafal sintaks, tapi memahami logika.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Navigasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="../course/">Course</a></li>
+                        <li><a href="../roadmap/">Roadmap</a></li>
+                        <li><a href="../service/">Layanan</a></li>
+                        <li><a href="../portfolio/">Portofolio</a></li>
+                        <li><a href="../blog/">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div style="display: none;">
+                    <h4 class="footer-title">Donasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-heart" style="color: #f56565; margin-right: 5px;"></i> Saweria</a></li>
+                        <li><a href="#"><i class="fas fa-hamburger" style="color: #fbbf24; margin-right: 5px;"></i> Trakteer</a></li>
+                        <li><a href="#"><i class="fab fa-paypal" style="color: #60a5fa; margin-right: 5px;"></i> PayPal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Social</h4>
+                    <div class="social-row">
+                        <a href="https://github.com/muharsyad" style="--icon-color: var(--light-text-primary)" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/muharsyad/" style="--icon-color: #3b82f6" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@muhacode" style="--icon-color: #f56565" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/muhacode" style="--icon-color: #E91E63" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://arsyadmuh.medium.com/" style="--icon-color: var(--light-text-primary)" target="_blank"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Muhacode. All rights reserved.</p>
+                <p class="font-mono" style="color: #374151;">Code is just applied Math & Logic.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIC FILTERING & SEARCH -->
+    <script src="js/script.js"></script>
+    <script src="js/resource-detail.js"></script>
+</body>
+</html>

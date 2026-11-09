@@ -16,7 +16,7 @@
     --light-slate-violet: #9390AD;
     --light-burnt-clay: #B88972;
     --transition: all 0.3s ease;
-    --glass-bg: color-mix(in srgb, var(--light-background-primary) 20%, transparent);
+    --glass-bg: color-mix(in srgb, var(--light-background-primary) 85%, transparent);
 }
 
 /* --- BASE STYLES --- */
@@ -37,6 +37,9 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 a {
@@ -63,7 +66,6 @@ ul {
     display: none !important;
 }
 
-/* Utility for trimming text to 2 lines */
 .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -115,7 +117,7 @@ nav.scrolled {
     width: 100%;
 }
 
-nav.logo a {
+.logo a {
     display: flex;
     align-items: center;
 }
@@ -129,7 +131,7 @@ nav.logo a {
 
 .logo a:hover .logo-img {
     opacity: 0.8;
-    transition: opacity 0.3 ease;
+    transition: opacity 0.3s ease;
 }
 
 .nav-links, .desktop-only {
@@ -192,10 +194,6 @@ nav.logo a {
     border-radius: 6px;
 }
 
-.mobile-menu-panel a:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
 /* --- HERO HEADER --- */
 .resources-header {
     padding: 140px 0 60px;
@@ -210,15 +208,15 @@ nav.logo a {
     right: 40px;
     font-size: 10rem;
     color: var(--light-text-primary);
-    opacity: 0.1;
+    opacity: 0.08;
     pointer-events: none;
 }
 
 .badge-free {
     display: inline-block;
     padding: 6px 16px;
-    background: color-mix(in srgb, var(--light-slate-violet) 10%, transparent);
-    border: 1px solid color-mix(in srgb, var(--light-sage-green) 10%, transparent);
+    background: color-mix(in srgb, var(--light-slate-violet) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--light-sage-green) 20%, transparent);
     color: var(--light-accent-primary);
     border-radius: 999px;
     font-size: 0.75rem;
@@ -229,8 +227,22 @@ nav.logo a {
     z-index: 10;
 }
 
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--light-accent-primary);
+    margin-bottom: 1rem;
+}
+
+.back-link:hover {
+    transform: translateX(-4px);
+}
+
 .resources-header h1 {
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
     font-weight: 800;
     margin-bottom: 1rem;
     position: relative;
@@ -254,7 +266,7 @@ nav.logo a {
     backdrop-filter: blur(8px);
     padding: 1rem 0;
     border-bottom: 1px solid var(--light-accent-secondary);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .filter-container {
@@ -275,7 +287,8 @@ nav.logo a {
     display: flex;
     gap: 0.5rem;
     overflow-x: auto;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
     scrollbar-width: none;
 }
 .filter-group::-webkit-scrollbar {
@@ -311,7 +324,7 @@ nav.logo a {
 }
 @media (min-width: 768px) {
     .search-wrapper {
-        width: 260px;
+        width: 280px;
     }
 }
 
@@ -339,19 +352,118 @@ nav.logo a {
     font-size: 0.875rem;
 }
 
-/* --- MAIN LIST CONTENT --- */
+/* --- MAIN CONTENT --- */
 main {
     padding: 3rem 0;
     flex-grow: 1;
 }
 
+/* --- CARD GRID LAYOUT (HALAMAN UTAMA) --- */
+.resources-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .resources-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.resource-card {
+    background: var(--light-background-secondary);
+    border: 1px solid var(--light-accent-secondary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.resource-card:hover {
+    border-color: var(--light-accent-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -5px rgba(61, 56, 51, 0.08);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-body {
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--light-text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    transition: var(--transition);
+}
+
+.resource-card:hover .card-title {
+    color: var(--light-accent-primary);
+}
+
+.card-desc {
+    font-size: 0.875rem;
+    color: var(--light-text-secondary);
+    line-height: 1.6;
+}
+
+.card-footer {
+    padding-top: 1rem;
+    border-top: 1px solid color-mix(in srgb, var(--light-accent-secondary) 60%, transparent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.card-meta {
+    color: var(--light-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.card-link {
+    font-weight: 700;
+    color: var(--light-accent-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.card-link i {
+    transition: transform 0.25s ease;
+}
+
+.resource-card:hover .card-link i {
+    transform: translateX(4px);
+}
+
+/* --- LIST LAYOUT (UNTUK HALAMAN DETAIL KOLEKSI) --- */
 .resources-list {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; /* Gap tipis antar file */
+    gap: 0.5rem;
 }
 
-/* List Item Styling */
 .resource-item {
     background: var(--light-background-secondary);
     border: 1px solid var(--light-accent-secondary);
@@ -366,70 +478,58 @@ main {
 
 .resource-item:hover {
     border-color: var(--light-accent-primary);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
 }
 
-/* Icon Box */
+/* Icon & Badges */
 .res-icon {
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 6px;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.125rem;
+    font-size: 1.2rem;
 }
-
-/* Specific Colors for Categories */
 
 .tag-sage-green {
-    background: color-mix(in srgb, var(--light-sage-green) 15%, transparent);
-    color: var(--light-sage-green);
+    background: color-mix(in srgb, var(--light-sage-green) 18%, transparent);
+    color: #5c6e54;
 }
-
 .tag-dusty-blue {
-    background: color-mix(in srgb, var(--light-dusty-blue) 15%, transparent);
-    color: var(--light-dusty-blue);
+    background: color-mix(in srgb, var(--light-dusty-blue) 18%, transparent);
+    color: #526977;
 }
-
 .tag-muted-mauve {
-    background: color-mix(in srgb, var(--light-muted-mauve) 15%, transparent);
-    color: var(--light-muted-mauve);
+    background: color-mix(in srgb, var(--light-muted-mauve) 18%, transparent);
+    color: #7c5b68;
 }
-
 .tag-warm-mustard {
-    background: color-mix(in srgb, var(--light-warm-mustard) 15%, transparent);
-    color: var(--light-warm-mustard);
+    background: color-mix(in srgb, var(--light-warm-mustard) 18%, transparent);
+    color: #9c732b;
 }
-
 .tag-dusty-rose {
-    background: color-mix(in srgb, var(--light-dusty-rose) 15%, transparent);
-    color: var(--light-dusty-rose);
+    background: color-mix(in srgb, var(--light-dusty-rose) 18%, transparent);
+    color: #8f5d5d;
 }
-
-.tag-muted-teal{
-    background: color-mix(in srgb, var(--light-muted-teal) 15%, transparent);
-    color: var(--light-muted-teal);
+.tag-muted-teal {
+    background: color-mix(in srgb, var(--light-muted-teal) 18%, transparent);
+    color: #466b6c;
 }
-
 .tag-warm-olive {
-    background: color-mix(in srgb, var(--light-warm-olive) 15%, transparent);
-    color: var(--light-warm-olive);
+    background: color-mix(in srgb, var(--light-warm-olive) 18%, transparent);
+    color: #64643a;
 }
-
 .tag-slate-violet {
-    background: color-mix(in srgb, var(--light-slate-violet) 15%, transparent);
-    color: var(--light-slate-violet);
+    background: color-mix(in srgb, var(--light-slate-violet) 18%, transparent);
+    color: #575475;
 }
-
 .tag-burnt-clay {
-    background: color-mix(in srgb, var(--light-burnt-clay) 15%, transparent);
-    color: var(--light-burnt-clay);
+    background: color-mix(in srgb, var(--light-burnt-clay) 18%, transparent);
+    color: #875942;
 }
 
-
-/* Content Body */
 .res-content {
     flex-grow: 1;
     min-width: 0;
@@ -459,11 +559,9 @@ main {
     .res-title {
         font-size: 1rem;
         flex-grow: 1;
-        width: auto;
     }
 }
 
-/* Meta / Tags */
 .res-meta {
     flex-shrink: 0;
     display: flex;
@@ -476,17 +574,16 @@ main {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 700;
-    padding: 2px 6px;
+    padding: 3px 8px;
     border-radius: 4px;
 }
 
 .res-size {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--light-text-secondary);
     font-family: "JetBrains Mono", monospace;
 }
 
-/* Download Button */
 .res-action {
     flex-shrink: 0;
     margin-left: 0.5rem;
@@ -521,7 +618,6 @@ main {
     }
 }
 
-/* Interaksi Keren: Tombol download menyala ketika baris item di-hover */
 .resource-item:hover .btn-download {
     background-color: var(--light-accent-primary);
     color: var(--light-background-primary);
@@ -531,10 +627,10 @@ main {
 /* --- EMPTY STATE --- */
 .empty-state {
     text-align: center;
-    padding: 2.5rem 0;
+    padding: 3rem 1rem;
     width: 100%;
     border: 1px dashed var(--light-accent-secondary);
-    border-radius: 8px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -556,12 +652,14 @@ main {
     font-size: 1.25rem;
     color: var(--light-accent-primary);
 }
+
 .empty-state h3 {
     font-size: 1rem;
     font-weight: 700;
     color: var(--light-text-primary);
     margin-bottom: 0.25rem;
 }
+
 .empty-state p {
     font-size: 0.875rem;
     color: var(--light-text-secondary);
@@ -583,18 +681,17 @@ footer {
 }
 
 @media (min-width: 768px) {
-    .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+    .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
 }
 
 .footer-logo {
     margin-bottom: 1rem;
-    display: inline-block; /* Diubah menjadi inline-block agar pas membungkus gambar */
+    display: inline-block;
 }
 
-/* Tambahkan style baru untuk mengatur ukuran gambar logo */
 .footer-logo img {
-    height: 80px; /* Sesuaikan nilai ini agar pas dengan desainmu (misal: 30px, 40px, atau 50px) */
-    width: auto;  /* Menjaga proporsi logo agar tidak gepeng */
+    height: 80px;
+    width: auto;
     display: block;
 }
 

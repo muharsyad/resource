@@ -1,0 +1,32 @@
+/* --- COLLECTION DETAIL TOOLBAR --- */
+.collection-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.doc-counter {
+    font-size: 0.85rem;
+    color: var(--light-text-secondary);
+}
+
+.btn-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px;
+    border: 1px solid var(--light-accent-secondary);
+    background: var(--light-background-secondary);
+    color: var(--light-text-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-sort:hover {
+    border-color: var(--light-accent-primary);
+    color: var(--light-accent-primary);
+}
